@@ -14,7 +14,7 @@
 git clone https://github.com/NitayDas/Courier_management_backend.git
 ```
 
-2. Create virtual env and activate:
+2. Create virtual env and activate(Optiontal):
 
 ```python
 python -m venv venv
