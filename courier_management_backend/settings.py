@@ -30,7 +30,7 @@ SECRET_KEY = os.environ.get("SECRET_KEY", 'django-insecure-=!5(s5i&&_=_e^)bycq*8
 # ALLOWED_HOSTS = os.environ.get("ALLOWED_HOSTS").split(" ") #for development
 # ALLOWED_HOSTS = ['courier-management-backend-1.onrender.com/', '127.0.0.1']
 
-ALLOWED_HOSTS = os.environ.get("ALLOWED_HOSTS",'127.0.0.1')
+ALLOWED_HOSTS = os.environ.get("ALLOWED_HOSTS", '127.0.0.1').split(',')
 
 DEBUG = os.environ.get('DEBUG', 'False').lower() == 'True'  #for development
 # DEBUG = True
