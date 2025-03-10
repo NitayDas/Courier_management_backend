@@ -10,3 +10,20 @@
 
 ## 🔧 Installation
 1. Clone the repo:
+```python
+git clone <repo-url>
+
+
+2. Install dependencies:
+```python
+pip install -r requirements.txt
+
+3. Run migrations:
+```python
+python manage.py makemigrations
+python manage.py migrate
+
+
+4. Start server:
+```python
+python manage.py runserver
