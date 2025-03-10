@@ -20,13 +20,14 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-=!5(s5i&&_=_e^)bycq*8!izzy3hitl&_c(=@1zb$)7_ivtl+y'
+# 'django-insecure-=!5(s5i&&_=_e^)bycq*8!izzy3hitl&_c(=@1zb$)7_ivtl+y'
+SECRET_KEY = os.environ.get("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
 import os
 import dj_database_url
 
-ALLOWED_HOSTS = ["your-app-name.onrender.com"] 
+ALLOWED_HOSTS = os.environ.get("ALLOWED_HOSTS").split(" ")
 
 DEBUG = os.environ.get('DEBUG', 'False').lower() == 'True'
 
@@ -91,9 +92,7 @@ DATABASES = {
 # postgresql://courier_system_render_user:rLgXWvRfKkOiF1XqrnZRMd5vBmCLZlQd@dpg-cv7h92tsvqrc739p0980-a.oregon-postgres.render.com/courier_system_render
 
 database_url = os.environ.get("DATABASE_URL")
-DATABASES = {
-    'default': dj_database_url.config(default=os.environ.get(database_url))
-}
+DATABASES['default'] = dj_database_url.parse(database_url)
 
 
 # Password validation
