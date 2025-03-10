@@ -11,24 +11,37 @@
 ## 🔧 Installation
 1. Clone the repo:
 ```python
-git clone <repo-url>
+git clone https://github.com/NitayDas/Courier_management_backend.git
+```
+
+2. Create virtual env and activate:
+
+```python
+python -m venv venv
+cd venv/Scripts
+.\actiavte
+cd ..
+cd ..
 ```
 
 
-2. Install dependencies:
+3. Install dependencies:
+   
 ```python
 pip install -r requirements.txt
 ```
 
 
-3. Run migrations:
+4. Run migrations:
+   
 ```python
 python manage.py makemigrations
 python manage.py migrate
 ```
 
 
-4. Start server:
+5. Start server:
+   
 ```python
 python manage.py runserver
 ```
