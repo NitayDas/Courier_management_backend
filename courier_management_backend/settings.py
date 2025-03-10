@@ -12,7 +12,6 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 
 from pathlib import Path
 import os
-import dj_database_url
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -31,9 +30,8 @@ SECRET_KEY = os.environ.get("SECRET_KEY")  #for development
 ALLOWED_HOSTS = os.environ.get("ALLOWED_HOSTS").split(" ") #for development
 # ALLOWED_HOSTS = []
 
-# DEBUG = os.environ.get('DEBUG', 'False').lower() == 'True'  #for development
-
-DEBUG = True
+DEBUG = os.environ.get('DEBUG', 'False').lower() == 'True'  #for development
+# DEBUG = True
 
 
 
@@ -48,7 +46,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'rest_framework_simplejwt',
-    'corsheaders',
     'courier',
 ]
 
@@ -117,12 +114,17 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 
-# JWT Authentication
+
 REST_FRAMEWORK = {
-    'DEFAULT_AUTHENTICATION_CLASSES': (
-        'rest_framework_simplejwt.authentication.JWTAuthentication',
-    )
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.SessionAuthentication',
+        'rest_framework.authentication.BasicAuthentication',
+    ],
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.IsAuthenticated',
+    ],
 }
+
 
 
 
