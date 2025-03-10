@@ -11,7 +11,7 @@ from rest_framework.generics import CreateAPIView
 # for user registration
 class RegisterUserView(CreateAPIView):
     serializer_class = UserRegistrationSerializer
-    permission_classes = [permissions.AllowAny]
+    permission_classes = [AllowAny]
 
     def create(self, request, *args, **kwargs):
         serializer = self.get_serializer(data=request.data)
