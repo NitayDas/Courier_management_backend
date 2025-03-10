@@ -34,6 +34,7 @@ DEBUG = os.environ.get('DEBUG', 'False').lower() == 'True'  #for development
 # DEBUG = True
 
 
+CSRF_TRUSTED_ORIGINS = ['https://courier-management-backend-1.onrender.com/']
 
 # Application definition
 
