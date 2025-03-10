@@ -28,8 +28,8 @@ SECRET_KEY = 'django-insecure-=!5(s5i&&_=_e^)bycq*8!izzy3hitl&_c(=@1zb$)7_ivtl+y
 
 # SECURITY WARNING: don't run with debug turned on in production!
 
-# ALLOWED_HOSTS = os.environ.get("ALLOWED_HOSTS").split(" ")
-ALLOWED_HOSTS = ['127.0.0.1', '0.0.0.0' 'courier-management-backend-1.onrender.com']
+ALLOWED_HOSTS = os.environ.get("ALLOWED_HOSTS").split(" ")
+# ALLOWED_HOSTS = ['127.0.0.1', '0.0.0.0' 'courier-management-backend-1.onrender.com']
 
 # DEBUG = os.environ.get('DEBUG', 'False').lower() == 'True'
 
