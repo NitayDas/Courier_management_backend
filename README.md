@@ -18,9 +18,17 @@ git clone https://github.com/NitayDas/Courier_management_backend.git
 
 ```python
 python -m venv venv
+```
+```python
 cd venv/Scripts
+```
+```python
 .\actiavte
+```
+```python
 cd ..
+```
+```python
 cd ..
 ```
 
