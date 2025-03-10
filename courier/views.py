@@ -11,7 +11,7 @@ class PackageViewSet(viewsets.ModelViewSet):
     serializer_class = PackageSerializer
 
     def get_permissions(self):
-        if self.action in ['update', 'partial_update', 'destroy']:  # Require authentication for update & delete
+        if self.action in ['create', 'update', 'partial_update', 'destroy']:  # Require authentication for update & delete
             return [IsAuthenticated()]
         return [AllowAny()]  
     
