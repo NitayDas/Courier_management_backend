@@ -22,18 +22,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-# SECRET_KEY = 'django-insecure-=!5(s5i&&_=_e^)bycq*8!izzy3hitl&_c(=@1zb$)7_ivtl+y' 
 SECRET_KEY = os.environ.get("SECRET_KEY", 'django-insecure-=!5(s5i&&_=_e^)bycq*8!izzy3hitl&_c(=@1zb$)7_ivtl+y')  #for development
-
-# SECURITY WARNING: don't run with debug turned on in production!
-
-# ALLOWED_HOSTS = os.environ.get("ALLOWED_HOSTS").split(" ") #for development
-# ALLOWED_HOSTS = ['courier-management-backend-1.onrender.com/', '127.0.0.1']
 
 ALLOWED_HOSTS = os.environ.get("ALLOWED_HOSTS", '127.0.0.1').split(',')
 
-DEBUG = os.environ.get('DEBUG', 'False').lower() == 'True'  #for development
-# DEBUG = True
+DEBUG = os.environ.get('DEBUG', 'False').lower() == 'True' 
 
 
 CSRF_TRUSTED_ORIGINS = ['https://courier-management-backend-1.onrender.com/','http://127.0.0.1',]
