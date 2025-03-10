@@ -31,9 +31,9 @@ SECRET_KEY = os.environ.get("SECRET_KEY")  #for development
 ALLOWED_HOSTS = os.environ.get("ALLOWED_HOSTS").split(" ") #for development
 # ALLOWED_HOSTS = []
 
-DEBUG = os.environ.get('DEBUG', 'False').lower() == 'True'  #for development
+# DEBUG = os.environ.get('DEBUG', 'False').lower() == 'True'  #for development
 
-# DEBUG = True
+DEBUG = True
 
 
 
