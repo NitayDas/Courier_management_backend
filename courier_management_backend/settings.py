@@ -23,9 +23,13 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-=!5(s5i&&_=_e^)bycq*8!izzy3hitl&_c(=@1zb$)7_ivtl+y'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+import os
+import dj_database_url
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["your-app-name.onrender.com"] 
+
+DEBUG = os.environ.get('DEBUG', 'False').lower() == 'True'
+
 
 
 # Application definition
@@ -82,6 +86,13 @@ DATABASES = {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
     }
+}
+
+# postgresql://courier_system_render_user:rLgXWvRfKkOiF1XqrnZRMd5vBmCLZlQd@dpg-cv7h92tsvqrc739p0980-a.oregon-postgres.render.com/courier_system_render
+
+database_url = os.environ.get("DATABASE_URL")
+DATABASES = {
+    'default': dj_database_url.config(default=os.environ.get(database_url))
 }
 
 

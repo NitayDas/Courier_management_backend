@@ -11,6 +11,6 @@ class PackageViewSet(viewsets.ModelViewSet):
 
     def destroy(self, request, *args, **kwargs):
         package = self.get_object()
-        package.is_deleted = True  # Mark as deleted instead of removing from DB
+        package.is_deleted = True  # Mark as deleted instead of permanent delete from DB
         package.save()
         return Response({'message': 'Package is softly deleted'}, status=status.HTTP_204_NO_CONTENT)
