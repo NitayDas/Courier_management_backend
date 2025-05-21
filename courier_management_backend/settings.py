@@ -24,9 +24,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = os.environ.get("SECRET_KEY", 'django-insecure-=!5(s5i&&_=_e^)bycq*8!izzy3hitl&_c(=@1zb$)7_ivtl+y')  #for development
 
-ALLOWED_HOSTS = os.environ.get("ALLOWED_HOSTS", '127.0.0.1').split(',')
+ALLOWED_HOSTS = ['localhost', '127.0.0.1']
 
-DEBUG = os.environ.get('DEBUG', 'False').lower() == 'True' 
+DEBUG = False
 
 
 CSRF_TRUSTED_ORIGINS = ['https://courier-management-backend-1.onrender.com/','http://127.0.0.1',]
