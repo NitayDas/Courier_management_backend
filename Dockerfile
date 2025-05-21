@@ -19,5 +19,5 @@ COPY . .
 EXPOSE 8000
 
 # 7. Default command
-CMD ["gunicorn", "--bind", "0.0.0.0:8000", "Courier_Management_system.wsgi:application"]
+CMD ["gunicorn", "--bind", "0.0.0.0:8000", "courier_management_backend.wsgi:application"]
 
